@@ -1,6 +1,3 @@
-
-
-
 const expenseDefaultState = [];
 export default (state = expenseDefaultState ,action) => {
   switch (action.type) {
