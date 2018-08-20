@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import ExpensesListItem from "./ExpenseListItem";
 import SelectExpenses from "../selectors/expenses";
-const ExpenseList = props => (
+const ExpenseList = (props) => (
   <div>
     <h1>ExpenseList from </h1>
     {props.expenses.map(expense => {

@@ -7,7 +7,7 @@ import { setTextFilter } from "./action/filter";
 import getVisibleExpenses from "./selectors/expenses";
 const store = configureStore();
 store.dispatch(
-  addExpense({ description: "vinod", note: "Hi I am rock", amount: 566 }),
+  addExpense({ description: "vinod note", note: "Hi I am rock", amount: 566 }),
 );
 store.dispatch(
   addExpense({
@@ -19,6 +19,10 @@ store.dispatch(
 
 store.dispatch(setTextFilter("rent"));
 store.dispatch(setTextFilter("vin"));
+
+setTimeout(() => {
+  store.dispatch(setTextFilter("note"));
+},3000)
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filter);
 console.log("visibleExpenses", visibleExpenses);
