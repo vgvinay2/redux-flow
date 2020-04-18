@@ -5,6 +5,12 @@ import configureStore from "./store/configureStore";
 import { addExpense } from "./action/expenses";
 import { setTextFilter } from "./action/filter";
 import getVisibleExpenses from "./selectors/expenses";
+
+// 
+import IndecisionApp from './Components/IndecisionApp'
+
+
+
 const store = configureStore();
 store.dispatch(
   addExpense({ description: "vinod note", note: "Hi I am rock", amount: 566 }),
@@ -29,13 +35,18 @@ console.log("visibleExpenses", visibleExpenses);
 
 console.log("state", state);
 
+
+
+
+
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Provider store={store}>
-          <AppRouters />
-        </Provider>
+        {/* this for redux flow <Provider store={store}>
+                  <AppRouters />
+                </Provider>*/}
+        <IndecisionApp />
       </div>
     );
   }
